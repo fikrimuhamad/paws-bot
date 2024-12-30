@@ -74,7 +74,7 @@ const headers = {
                 const user = JSON.parse(decodeURIComponent(params.get('user')));
 
                 console.log(`====================================================`);
-                console.log(`[[#${no}] MENGAMBIL DATA AKUN: ${user.username}]`);
+                console.log(`[[#${no}] MENGAMBIL DATA AKUN: ${user.username || ""}]`);
 
                 const infoAkun = await getCURL(
                     'https://api.paws.community/v1/user/auth',
