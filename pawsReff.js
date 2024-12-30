@@ -103,7 +103,7 @@ const headers = {
         try {
         const params = new URLSearchParams(query);
         const user = JSON.parse(decodeURIComponent(params.get('user')));
-        console.log(`\n===============-# [${no}/${dataAkun.length}] RUNNING QUERY ${user.username} # ================\n`);
+        console.log(`\n===============-# [${no}/${dataAkun.length}] RUNNING QUERY ${user.username || ""} # ================\n`);
 
         const infoAkun = await getCURL('https://api.paws.community/v1/user/auth', 'POST', headers, {'data': query, "referralCode":"wwUszmLF"});
         if (infoAkun.status == 201 && infoAkun.data.data != undefined) {
